@@ -18,7 +18,7 @@ print(driver.title)
 search_words = ['revit', 'autocad', 'LP 1-5', 'LP 1', 'LP 2', 'LP 3', 'LP 4', 'LPH 1', 'LPH 2', 'LPH 3', 'LPH 4', 'BIM',
                 'Entwurf', 'pläne', 'plan', 'design']
 
-# Accept the cookie
+
 try:
     # wait 10 seconds before looking for element
     cookie = WebDriverWait(driver, 10).until(
@@ -32,7 +32,7 @@ except:
 search = driver.find_element(By.NAME, 'search_block_form')
 
 # Create csv file with option write and append
-csv_file = open('aksaarland2.csv', 'a', encoding="utf-8")
+csv_file = open('aksaarland.csv', 'a', encoding="utf-8")
 csv_writer = csv.writer(csv_file)
 csv_writer.writerow(['title', 'content'])
 
@@ -45,10 +45,10 @@ for word in search_words:
     try:
         index = search_words.index(word)
 
-        # Create csv file with option write and append
-        csv_file = open('aksaarland2.csv', 'a', encoding="utf-8")
-        csv_writer = csv.writer(csv_file)
-        csv_writer.writerow(['title', 'content'])
+        # # Create csv file with option write and append
+        # csv_file = open('aksaarland2.csv', 'a', encoding="utf-8")
+        # csv_writer = csv.writer(csv_file)
+        # csv_writer.writerow(['title', 'content'])
 
         # If primary_word == 0 -> Results are none or single page
         if primary_word == '':
